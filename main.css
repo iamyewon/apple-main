@@ -7,8 +7,10 @@
 
 body{
     width: 100vw;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     background-color: green;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
 }
 
 ul{
@@ -27,11 +29,10 @@ button{
 
 
 /**************** nav ****************/
-
-.global-nav{
+/* .global-nav{
     width: 100vw;
     height: 44px;
-    /* background-color: #161617CC; */
+    background-color: #161617CC;
     background-color: rgba(22, 22, 23, 0.9);
     position: fixed;
     display: flex;
@@ -41,7 +42,6 @@ button{
 
 .nav-content{
     width: 1000px;   
-    /* 임시 */
 }
 
 .dropdown-menu{
@@ -91,4 +91,38 @@ button{
 .logo img{
     width: 13px;
     height: 16px;
+} */
+
+
+/**************** main ****************/
+
+.main{
+    background-color: #161617;
+    padding-top: 44px;
+    /* width: 2560px; */
+    margin: 0 auto;
+}
+
+.heroes{
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: repeat(1, 2560px);
+    gap: 8px;
+    border-bottom: 12px solid #fff;
+}
+
+.heroes-iphone15pro-wrap{
+    background-image: url("https://www.apple.com/v/home/bm/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_largetall.jpg");
+    width: 2560px;
+    height: 692px;
+    background-size: 2560px 692px;;
+    background-repeat: no-repeat;
+    background-position: 70%; 
+}
+
+
+/**************** footer ****************/
+
+footer{
+    background-color: #f5f5f7;
 }
