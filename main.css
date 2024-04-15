@@ -29,7 +29,7 @@ button{
 
 
 /**************** nav ****************/
-/* .global-nav{
+.global-nav{
     width: 100vw;
     height: 44px;
     background-color: #161617CC;
@@ -91,8 +91,7 @@ button{
 .logo img{
     width: 13px;
     height: 16px;
-} */
-
+}
 
 /**************** main ****************/
 
@@ -110,14 +109,22 @@ button{
     gap: 8px;
     border-bottom: 12px solid #fff;
 }
+.heroes-iphone15pro-wrap-test{
+    width: 2560px;
+    height: 692px;    
+}
+
+/* img div 따로 만듦 */
 
 .heroes-iphone15pro-wrap{
     background-image: url("https://www.apple.com/v/home/bm/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_largetall.jpg");
     width: 2560px;
     height: 692px;
-    background-size: 2560px 692px;;
+    /* background-size: 3006px 700px; */
+    background-size: 3108px 736px;
+    overflow: hidden;
     background-repeat: no-repeat;
-    background-position: 70%; 
+    background-position: 100%; 
 }
 
 
