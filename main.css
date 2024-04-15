@@ -1,0 +1,94 @@
+/**************** reset ****************/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    /* overflow-x: hidden; */
+    background-color: green;
+}
+
+ul{
+    list-style:none
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+/**************** nav ****************/
+
+.global-nav{
+    width: 100vw;
+    height: 44px;
+    /* background-color: #161617CC; */
+    background-color: rgba(22, 22, 23, 0.9);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+}
+
+.nav-content{
+    width: 1000px;   
+    /* 임시 */
+}
+
+.dropdown-menu{
+    display: none;
+    position : fixed;
+    width: 100vw;
+    height: 400px;
+    background-color: #161617CC;
+    left: 0;
+    top: -44px;
+    transition: all 0.75s;
+    z-index: 6;
+} 
+
+.nav-list-item:hover .dropdown-menu{
+    display: block;
+    max-height: 200px;
+    top: 44px;
+}
+
+.nav-list{
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list li a, .nav-list li span{
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-list-item a{
+    font-family: "PT Sans", sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.nav-list li span{
+    font-size: 22px;
+    font-weight: 200;
+}
+
+.logo img{
+    width: 13px;
+    height: 16px;
+}
