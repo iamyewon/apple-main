@@ -1,4 +1,4 @@
-/**************** reset ****************/
+/**************************** reset ****************************/
 *{
     box-sizing: border-box;
     margin: 0;
@@ -28,12 +28,12 @@ button{
 }
 
 
-/**************** nav ****************/
+/**************************** nav ****************************/
 .global-nav{
     width: 100vw;
     height: 44px;
     background-color: #161617CC;
-    background-color: rgba(22, 22, 23, 0.9);
+    background-color: rgba(22, 22, 23, 0.8);
     position: fixed;
     display: flex;
     justify-content: center;
@@ -44,48 +44,73 @@ button{
     width: 1000px;   
 }
 
-.dropdown-menu{
-    display: none;
-    position : fixed;
-    width: 100vw;
-    height: 400px;
-    background-color: #161617CC;
-    left: 0;
-    top: -44px;
-    transition: all 0.75s;
-    z-index: 6;
-} 
-
-.nav-list-item:hover .dropdown-menu{
-    display: block;
-    max-height: 200px;
-    top: 44px;
-}
-
 .nav-list{
     height: 42px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-.nav-list li a, .nav-list li span{
-    text-decoration: none;
-    color: rgba(255,255,255,0.8);
+.nav-list-item{
     display: flex;
     align-items: center;
 }
 
-
-.nav-list-item a{
+.nav-list-item-link{
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
     font-family: "PT Sans", sans-serif;
     font-weight: 100;
     font-size: 12px;
 }
 
-.nav-list li span{
+.material-symbols-outlined{
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+}
+
+.nav-list-item span{
     font-size: 22px;
     font-weight: 200;
+}
+
+
+.dropdown-menu{
+    position : fixed;
+    width: 100vw;
+    height: 0;
+    background-color: #161617CC;
+    left: 0;
+    top: 44px;
+    display: flex;
+    justify-content: center;
+} 
+
+.dropdown-menu-content{
+    width: 1000px;
+    padding: 30px 0;
+    /* display: none; ? */
+}
+
+.dropdown-menu-content ul{
+    opacity: 0;
+}
+
+.dropdown-menu-content ul li a{
+    color: white;
+    font-size: 12px;
+}
+
+.nav-list-item:hover .dropdown-menu{
+    height: 400px;
+    transition: height 0.5s;
+    background-color: #161617;
+}
+
+.nav-list-item:hover .dropdown-menu-content ul{
+    opacity: 100;
+    transition: opacity 0.85s;
 }
 
 .logo img{
@@ -93,43 +118,525 @@ button{
     height: 16px;
 }
 
-/**************** main ****************/
+/**************************** main ****************************/
 
 .main{
-    background-color: #161617;
+    background-color: slategrey;
     padding-top: 44px;
-    /* width: 2560px; */
+    max-width: 2560px;
     margin: 0 auto;
 }
 
 .heroes{
-    background-color: yellow;
+    background-color: steelblue;
     display: grid;
     grid-template-columns: repeat(1, 2560px);
-    gap: 8px;
-    border-bottom: 12px solid #fff;
+    gap: 12px;
+    margin-bottom: 12px;
 }
-.heroes-iphone15pro-wrap-test{
-    width: 2560px;
+
+.heroes-iphone15pro-wrap, .heroes-iphone15-wrap, .heroes-macbookair-wrap{
+    max-width: 2560px;
+    width: 100vw;
     height: 692px;    
 }
 
-/* img div 따로 만듦 */
+/* main button setting */
 
-.heroes-iphone15pro-wrap{
-    background-image: url("https://www.apple.com/v/home/bm/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_largetall.jpg");
+.main-primary-btn, .main-secondary-btn{
+    padding: 11px 21px;
+    border-radius: 24px;
+    font-size: 17px;
+}
+
+.main-primary-btn{
+    background-color: #0071e3;
+    color: rgba(255,255,255,0.9);
+    border: 0;
+    margin-right: 10px;
+    min-width: 28px;
+}
+
+.main-secondary-btn{
+    background-color: rgba(0, 0, 0, 0);
+    color: #0071e3;
+    border: 1px solid #0071e3;
+}
+
+.main-primary-btn:hover{
+    background-color: #0077ED;
+}
+
+.main-secondary-btn:hover{
+    background-color: #0071e3;
+    color: rgba(255,255,255,0.9);
+}
+
+/**************************** main heroes img ****************************/
+
+.heroes-iphone15pro-img, .heroes-iphone15-img, .heroes-macbookair-img{
     width: 2560px;
     height: 692px;
-    /* background-size: 3006px 700px; */
-    background-size: 3108px 736px;
+    /* background-size: 3006px 736px; */
+    background-size: 3200px 736px;
     overflow: hidden;
     background-repeat: no-repeat;
     background-position: 100%; 
 }
 
+.heroes-iphone15pro-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_largetall.jpg");
+    color: white;
+}
 
-/**************** footer ****************/
+.heroes-iphone15-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/heroes/iphone-15/hero_iphone15_announce__uuemlcwczn6u_largetall.jpg");
+}
+
+.heroes-macbookair-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/heroes/macbook-air-m3/hero_macbook_air_m3__cp4t7pn8zqaa_largetall.jpg");
+}
+
+/**************************** main heroes iphone15 pro ****************************/
+
+.heroes-iphone15pro-text{
+    /* width: 2560px; */
+    width: 100vw;
+    /* 축소시키면 이동됨 ㅠㅠ */
+    padding-top: 55px;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+}
+
+.heroes-iphone15pro-title, .heroes-iphone15pro-title p{
+    font-size: 56px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+}
+
+.heroes-iphone15pro-title p{
+    display: inline;
+    letter-spacing: -4px;
+}
+
+.heroes-iphone15pro-content{
+    font-size: 28px;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+
+/**************************** main heroes iphone15 ****************************/
+
+.heroes-iphone15-text{
+    width: 100vw;
+    padding-top: 55px;
+    color: #000;
+    text-align: center;
+}
+
+.heroes-iphone15-title{
+    font-size: 56px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.heroes-iphone15-title p{
+    display: inline;
+    letter-spacing: -5px;
+}
+
+.heroes-iphone15-content{
+    font-size: 28px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+/**************************** main heroes macbook air ****************************/
+
+
+.heroes-macbookair-text{
+    width: 100vw;
+    padding-top: 55px;
+    color: #000;
+    text-align: center;
+}
+
+.heroes-macbookair-title{
+    font-size: 56px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.heroes-macbookair-title p{
+    display: inline;
+    letter-spacing: -5px;
+}
+
+.heroes-macbookair-content{
+    font-size: 28px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+
+/**************************** promotions ****************************/
+
+.promotions{
+    background-color: yellow;
+    max-width: 2536px;
+    margin-left: 12px;
+    width: calc(100vw - 44px);
+}
+
+.main-promotions{
+    background-color: palevioletred;
+    border-bottom: 12px solid palevioletred;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    gap: 12px;
+}
+
+.promo-wrap{
+    width: 100%;
+    height: 580px;
+}
+
+.promo-btn-wrap{
+    margin-top: 17px;
+}
+
+.promo-btn-wrap button{
+    padding: 10px 15px;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+}
+
+/**************************** promotion items****************************/
+
+.promo-img{
+    width: 100%;
+    height: 100%;
+    background-size: 1262px 580px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+.promo-wwdc24-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/promos/wwdc24-announce/promo_wwdc24_announce__fv0p5miwnjiq_large.jpg");
+}
+
+.promo-vision-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/promos/apple-vision-pro/promo_apple_vision_pro__f4v4zp0sum2y_large.jpg");
+}
+
+.promo-watch-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/promos/apple-watch-series-9/promo_apple_watch_series_9_order__b3u85rm9zf6u_large.jpg");
+}
+
+.promo-ipad-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/promos/ipad/promo_ipad__fioegapg12qi_large.jpg");
+}
+
+.promo-card-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/promos/apple-card/tile__cauwwcyyn9hy_large.jpg");
+}
+
+.promo-iphone-tradein-img{
+    background-image: url("https://www.apple.com/v/home/bm/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_large.jpg");
+}
+
+.promo-text{
+    text-align: center;
+}
+
+/**************** promotions wwdc24 ****************/
+
+.promo-wwdc24-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 53px;
+}
+
+.promo-wwdc24-text p{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/**************** promotions apple vision ****************/
+
+.promo-vision-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 53px;
+}
+
+.promo-apple-vision-logo{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.promo-vision-text p{
+    font-size: 21px;
+    letter-spacing: -0.6px;
+    color: #1d1d1f;
+}
+
+
+/**************** promotions apple watch ****************/
+
+.promo-watch-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 53px;
+}
+
+.promo-apple-watch-logo{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.promo-watch-text p{
+    font-size: 21px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: -0.5px;
+}
+
+/**************** promotions ipad ****************/
+
+.promo-ipad-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 36px;
+}
+
+.promo-ipad-text h3{
+    font-size: 40px;
+}
+
+.promo-ipad-text p{
+    font-size: 21px;
+    color: #1d1d1f;
+    letter-spacing: -0.5px;
+}
+
+
+/**************** promotions card ****************/
+
+.promo-card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 53px;
+}
+
+.promo-apple-card-logo{
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 6px;
+}
+
+.promo-card-text p{
+    font-size: 21px;
+    color: #1d1d1f;
+    letter-spacing: -0.7px;
+}
+
+
+/**************** promotions trade in ****************/
+
+.promo-tradein-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+}
+
+.promo-iphone-tradein-logo{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 8px;
+}
+
+.promo-tradein-text p{
+    font-size: 21px;
+    color: #1d1d1f;
+    letter-spacing: -0.7px;
+}
+
+
+/**************************** tv-plus-gallery ****************************/
+
+.tv-plus-gallery{
+    max-width: 2560px;
+    width: 100vw;
+    height: 706px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightsalmon;
+}
+
+.slide-box img{
+    width: 1250px;
+    height: 667px;
+}
+
+.dot-nav{
+    width: 198px;
+    height: 25px;
+    background-color: lightsalmon;
+    margin: 0 auto;
+}
+
+.dot-nav-list{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dot-nav-item{
+    width: 8px;
+    height: 8px;
+    display: flex;
+}
+
+.dot-nav-item a{
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.54);
+    border-radius: 50%;
+}
+
+
+.dot-nav-item a span:hover .dot-nav-item a{
+    background-color: red;
+}
+
+
+.dot-nav-item a span{
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+}
+
+/**************************** footer ****************************/
 
 footer{
     background-color: #f5f5f7;
+    width: 100vw;
 }
+
+.footer-content{
+    width: 1024px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.footer-notes{
+    padding: 17px 0 11px 0;
+    background-color: #f5f5f7;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.footer-notes p{
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #0000008F;
+}
+
+.footer-notes p a{
+    text-decoration: underline;
+}
+
+.directory{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.directory-column-section{
+    padding-bottom: 18px;
+}
+
+.directory-column-section h3, .directory ul li{
+    font-size: 12px;
+    margin: 0 20px 9.6px 0;
+    color: rgba(0, 0, 0, 0.88);
+}
+
+.directory-column-section ul li a{
+    color: rgba(0, 0, 0, 0.72);
+}
+
+.footer-info{
+    padding: 37px 0 11px 0;
+    background-color: #f5f5f7;;
+}
+
+.footer-shop{
+    padding-bottom: 19px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #0000008F;
+}
+
+.footer-shop a{
+    text-decoration: underline;
+    color: #0066CC;
+}
+
+.footer-legal{
+    width: 100%;
+    height: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.copyright, .footer-legal-links, .footer-legal-locale{
+    height: 16px;
+    margin-right: 30px;
+    font-size: 12px;
+    color: #0000008F;
+}
+
+.footer-legal-links{
+    display: flex;
+    justify-content: space-between;
+    width: 420px;
+}
+
+.footer-legal-links-item{
+    padding-right: 9px;
+    border-right: 1px solid #6363638f;
+}
+
+.footer-legal-links-item a{
+    color: #0000008F;
+}
+
+.footer-legal-locale{
+    margin-left: 30px;
+    color: #0000008F;
+}
+
+
+
+/* 갤러리 a태그 hover */
+/* 드롭다운 메뉴 hover 사라짐 */
+/* 드롭다운 메뉴 자체에 hover걸림 */
+/* 비율 줄였을 때 글씨 + 사진 움직임 */
