@@ -44,6 +44,7 @@ button{
 .nav-content{
     width: 1000px;   
     height: 100%;
+    z-index: 8;
 }
 
 .nav-list{
@@ -92,22 +93,11 @@ button{
     z-index: 4;
 }
 
-/* .dropdown-menu-background{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 0;
-    z-index: 3;
-    background-color: red;
-    backdrop-filter: blur(20px);
-} */
 
 .dropdown-menu-content{
     width: 1024px;
     padding: 40px 22px 84px 22px;
     display: none;
-    z-index: 5;
 }
 
 .dropdown-menu-links{
@@ -115,7 +105,7 @@ button{
 }
 
 .dropdown-menu-main-links{
-    padding-right: 88px;
+    padding-right: 72px;
 }
 
 .dropdown-menu-content h2{
@@ -129,37 +119,72 @@ button{
     padding: 9px 11px 7px 0;
     margin-bottom: -6px;
     letter-spacing: 0.5px;
+    display: inline-block;
 }
 
 .dropdown-menu-main-links a{
     font-size: 24px;
-    padding: 9px 8px 7px 0;
+    padding: 9px 8px 7px 11px;
+    margin-bottom: 4px;
+    padding: 0;
+}
+
+.dropdown-menu-small-link a{
+    font-size: 12px;
+}
+
+.first-small-link{
+    margin-top: 16px;
+}
+
+.dropdown-background{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 44px;
+    z-index: 3;
+    background-color: rgba(22, 22, 23, 0.8); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: none;
 }
 
 .nav-list-item:hover .dropdown-menu{
-    height: 450px;
-    transition: height 0.4s;    
+    /* height: auto; */
+    /* height: fit-content; */
+    /* px고정안하면 트렌지션이 안먹힘 */
+    height: 480px;
+    transition: height 0.4s;
+    transition-delay: 0.1s;
     background-color: #161617;
 }
-
-/* .nav-list-item:hover ~ .dropdown-menu-background{
-    height: 1300px;
-    transition: height 1.5s;    
-} */
 
 .nav-list-item:hover .dropdown-menu .dropdown-menu-content{
     display: flex;
 }
 
 .nav-list-item:hover .dropdown-menu .dropdown-menu-content a, .dropdown-menu .dropdown-menu-content h2{
-    color: rgba(255,255,255, 0.8);
-    animation: color-change 1s linear;
+    color: transparent;
+    animation: color-change 0.3s forwards;
+    animation-delay: 0.3s;
 }
 
 @keyframes color-change {
     0% {  color: rgba(255, 255, 255, 0.1); }
     50% {  color: rgba(255, 255, 255, 0.45); }
     100% {  color: rgba(255, 255, 255, 0.8); }
+}
+
+.nav-list-item:hover .dropdown-background{
+    /* height: 1000px; */
+    /* transition: height .5s; */
+    /* transition-delay: 1s; */
+    display: block;
+}
+
+.dropdown-background:hover{
+    display: none;
 }
 
 .logo img{
@@ -251,7 +276,6 @@ button{
 .heroes-iphone15pro-text{
     /* width: 2560px; */
     width: 100vw;
-    /* 축소시키면 이동됨 ㅠㅠ */
     padding-top: 55px;
     color: rgba(255,255,255,0.9);
     text-align: center;
@@ -553,6 +577,7 @@ button{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 20px;
 }
 
 .dot-nav-item{
@@ -568,9 +593,13 @@ button{
     border-radius: 50%;
 }
 
+.dot-nav-item:first-child{
+    background-color: black;
+    border-radius: 50%;
+}
 
-.dot-nav-item a span:hover .dot-nav-item a{
-    background-color: red;
+.dot-nav-item a:hover{
+    background-color: rgba(0, 0, 0, 0.70);
 }
 
 
@@ -685,3 +714,5 @@ footer{
 
 
 /* 비율 줄였을 때 글씨 + 사진 움직임 */
+/* 블러 */
+/* top: 0 했을 때 글씨 묻힘 */
