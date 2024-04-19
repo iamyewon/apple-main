@@ -66,6 +66,7 @@ button{
     font-family: "PT Sans", sans-serif;
     font-weight: 100;
     font-size: 12px;
+    /* padding: 0 8px; */
 }
 
 .material-symbols-outlined{
